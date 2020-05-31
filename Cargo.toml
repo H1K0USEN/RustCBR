@@ -1,0 +1,10 @@
+[package]
+name = "rustcbr"
+version = "0.1.0"
+authors = ["H1K0USEN <hikousen1234@gmail.com>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+codebreaker = "0.1.6"
+structopt = "0.3.14"
