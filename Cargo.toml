@@ -1,13 +1,14 @@
 [package]
 name = "rustcbr"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["H1K0USEN <hikousen1234@gmail.com>"]
 edition = "2018"
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/H1K0USEN/RustCBR"
 license-file = "LICENSE"
-keywords = ["ps2", "cheat code"]
+keywords = ["ps2", "cheat-code"]
+description = "Small program made to encrypt/decrypt codebreaker cheat codes"
 
 [dependencies]
 codebreaker = "0.1.6"
