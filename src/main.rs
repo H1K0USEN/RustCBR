@@ -69,7 +69,7 @@ fn main() {
         .expect("Error reading input");
 
         if destaddr == "\n" || destaddr.len() > 10 {
-            eprint!("No destination address input given.");
+            eprintln!("No destination address input given.");
             process::exit(1);
         }
 
@@ -82,7 +82,7 @@ fn main() {
         .expect("Error reading input");
 
         if addrval == "\n" || addrval.len() > 10 {
-            eprint!("No address value input given");
+            eprintln!("No address value input given");
         }
 
         println!("Encrypting code..");
