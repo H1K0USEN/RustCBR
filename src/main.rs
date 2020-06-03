@@ -83,6 +83,7 @@ fn main() {
 
         if addrval == "\n" || addrval.len() > 10 {
             eprintln!("No address value input given");
+            process::exit(1);
         }
 
         println!("Encrypting code..");
