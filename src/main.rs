@@ -31,7 +31,7 @@ fn main() {
         .read_line(&mut destaddr)
         .expect("Error reading input");
 
-        if destaddr == "\n" || destaddr.len() > 10 {
+        if destaddr == "\n" || destaddr.len() != 9 {
             eprintln!("Invalid destination address input given");
             process::exit(1);
         }
@@ -44,17 +44,17 @@ fn main() {
         .read_line(&mut addrval)
         .expect("Error reading input");
 
-        if addrval == "\n" || addrval.len() > 10 {
+        if addrval == "\n" || addrval.len() != 9 {
             eprintln!("Invalid address value input given.");
             process::exit(1);
         }
 
         println!("Decrypting code..");
 
-        let destaddr = u32::from_str_radix(destaddr.trim().trim_start_matches("0x"), 16)
+        let destaddr = u32::from_str_radix(&destaddr.trim().trim_start_matches("0x"), 16)
             .expect("Failed to parse code");
 
-        let addrval = u32::from_str_radix(addrval.trim().trim_start_matches("0x"), 16)
+        let addrval = u32::from_str_radix(&addrval.trim().trim_start_matches("0x"), 16)
             .expect("Failed to parse code.");
 
         code_handling::decrypt(destaddr, addrval);
@@ -88,10 +88,10 @@ fn main() {
 
         println!("Encrypting code..");
 
-        let destaddr = u32::from_str_radix(destaddr.trim().trim_start_matches("0x"), 16)
+        let destaddr = u32::from_str_radix(&destaddr.trim().trim_start_matches("0x"), 16)
             .expect("Failed to parse code");
 
-        let addrval = u32::from_str_radix(addrval.trim().trim_start_matches("0x"), 16)
+        let addrval = u32::from_str_radix(&addrval.trim().trim_start_matches("0x"), 16)
             .expect("Failed to parse code");
 
         code_handling::encrypt(destaddr, addrval);
